@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AutoSilentMode</string>
+    <string name="action_settings">Settings</string>
+    <string name="runtime_permissions_txt">Please Enable all Permission from App Setting :</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">Delete</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="edit">Edit</string>
+</resources>

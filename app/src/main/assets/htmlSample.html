@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/app.css">
+    <title>RaspiWiFi Setup</title>
+</head>
+
+<body>
+
+<div id="mainContent">
+    <h1>Wi-Fi 1 Setup</h1>
+    <div class="wifiIcon"></div>
+    ​
+    <form action="/save_credentials" method=post>
+        <ul>
+            <li>
+                <label for="ssid">Select Wi-Fi network</label>
+            </li>
+            ​
+            <li class="wifiNetwork">
+                <select id="ssid" name="ssid" , class="wifiNetworkInputs">
+
+                    <option value='dlink'>dlink</option>
+
+                    <option value='island-137990'>island-137990</option>
+
+                    <option value='Harris'>Harris</option>
+
+                    <option value='Oxit-2GHz1'>Oxit-2GHz1</option>
+
+                    <option value='NTGR_VMB_1531840281'>NTGR_VMB_1531840281</option>
+
+                    <option value='Oxit-2GHz'>Oxit-2GHz</option>
+
+                    <option value='HP-Print-0B-Officejet Pro 8600'>HP-Print-0B-Officejet Pro 8600</option>
+
+                    <option value='phllc'>phllc</option>
+
+                    <option value='HP-Print-D6-Photosmart 7520'>HP-Print-D6-Photosmart 7520</option>
+
+                    <option value='TWCWiFi'>TWCWiFi</option>
+
+                    <option value='CableWiFi'>CableWiFi</option>
+
+                    <option value='TWCWiFi-Passpoint'>TWCWiFi-Passpoint</option>
+
+                    <option value='SpectrumWiFi'>SpectrumWiFi</option>
+
+                    <option value='SpectrumWiFi Plus'>SpectrumWiFi Plus</option>
+
+                    <option value='Ray&#39;s and Associates'>Ray&#39;s and Associates</option>
+
+                    <option value='ATTq7gw8Xi'>ATTq7gw8Xi</option>
+
+                    <option value='WesternDigital-f6'>WesternDigital-f6</option>
+
+                    <option value='Bellehomehealthcare'>Bellehomehealthcare</option>
+
+                </select>
+            </li>
+            ​ ​ ​
+            <li class="btDevices">
+                <select id="bt1" name="bt1" , class="btDevicesInputs">
+
+                    <option value='LE Scan ...'>LE Scan value
+                    </option>
+
+                    <option value='C9:F6:62:44:A8:6A RevCB_A2'>C9:F6:62:44:A8:6A RevCB_A2
+                    </option>
+
+                    <option value='4E:0B:49:3C:EA:2E (unknown)'>4E:0B:49:3C:EA:2E (unknown)
+                    </option>
+
+                    <option value='4E:0B:49:3C:EA:2E (unknown)'>4E:0B:49:3C:EA:2E (unknown)
+                    </option>
+
+                    <option value='23:CE:7D:AA:50:33 (unknown)'>23:CE:7D:AA:50:33 (unknown)
+                    </option>
+
+                    <option value='D0:CF:5E:2A:56:6F OOLER-18170002'>D0:CF:5E:2A:56:6F OOLER-18170002
+                    </option>
+
+                    <option value='F0:18:98:6D:CC:ED (unknown)'>F0:18:98:6D:CC:ED (unknown)
+                    </option>
+
+                    <option value='F0:18:98:6D:CC:ED (unknown)'>F0:18:98:6D:CC:ED (unknown)
+                    </option>
+
+                    <option value='C9:F6:62:44:A8:6A (unknown)'>C9:F6:62:44:A8:6A (unknown)
+                    </option>
+
+                    <option value='78:4C:FF:4F:FA:25 (unknown)'>78:4C:FF:4F:FA:25 (unknown)
+                    </option>
+
+                    <option value='D0:CF:5E:2A:56:6F (unknown)'>D0:CF:5E:2A:56:6F (unknown)
+                    </option>
+
+                    <option value='51:F8:AC:31:39:69 (unknown)'>51:F8:AC:31:39:69 (unknown)
+                    </option>
+
+                    <option value='78:4C:FF:4F:FA:25 (unknown)'>78:4C:FF:4F:FA:25 (unknown)
+                    </option>
+
+                    <option value='7F:49:28:DB:46:64 (unknown)'>7F:49:28:DB:46:64 (unknown)
+                    </option>
+
+                    <option value='7F:49:28:DB:46:64 (unknown)'>7F:49:28:DB:46:64 (unknown)
+                    </option>
+
+                    <option value='51:F8:AC:31:39:69 (unknown)'>51:F8:AC:31:39:69 (unknown)
+                    </option>
+
+                    <option value='F7:3E:84:F6:67:4C Tile'>F7:3E:84:F6:67:4C Tile
+                    </option>
+
+                    <option value='F7:3E:84:F6:67:4C (unknown)'>F7:3E:84:F6:67:4C (unknown)
+                    </option>
+
+                </select>
+            </li>
+            ​ ​
+            <li class="btDevices">
+                <select id="bt2" name="bt2" , class="btDevicesInputs">
+
+                    <option value='LE Scan ...'>LE Scan value
+                    </option>
+
+                    <option value='C9:F6:62:44:A8:6A RevCB_A2'>C9:F6:62:44:A8:6A RevCB_A2
+                    </option>
+
+                    <option value='4E:0B:49:3C:EA:2E (unknown)'>4E:0B:49:3C:EA:2E (unknown)
+                    </option>
+
+                    <option value='4E:0B:49:3C:EA:2E (unknown)'>4E:0B:49:3C:EA:2E (unknown)
+                    </option>
+
+                    <option value='23:CE:7D:AA:50:33 (unknown)'>23:CE:7D:AA:50:33 (unknown)
+                    </option>
+
+                    <option value='D0:CF:5E:2A:56:6F OOLER-18170002'>D0:CF:5E:2A:56:6F OOLER-18170002
+                    </option>
+
+                    <option value='F0:18:98:6D:CC:ED (unknown)'>F0:18:98:6D:CC:ED (unknown)
+                    </option>
+
+                    <option value='F0:18:98:6D:CC:ED (unknown)'>F0:18:98:6D:CC:ED (unknown)
+                    </option>
+
+                    <option value='C9:F6:62:44:A8:6A (unknown)'>C9:F6:62:44:A8:6A (unknown)
+                    </option>
+
+                    <option value='78:4C:FF:4F:FA:25 (unknown)'>78:4C:FF:4F:FA:25 (unknown)
+                    </option>
+
+                    <option value='D0:CF:5E:2A:56:6F (unknown)'>D0:CF:5E:2A:56:6F (unknown)
+                    </option>
+
+                    <option value='51:F8:AC:31:39:69 (unknown)'>51:F8:AC:31:39:69 (unknown)
+                    </option>
+
+                    <option value='78:4C:FF:4F:FA:25 (unknown)'>78:4C:FF:4F:FA:25 (unknown)
+                    </option>
+
+                    <option value='7F:49:28:DB:46:64 (unknown)'>7F:49:28:DB:46:64 (unknown)
+                    </option>
+
+                    <option value='7F:49:28:DB:46:64 (unknown)'>7F:49:28:DB:46:64 (unknown)
+                    </option>
+
+                    <option value='51:F8:AC:31:39:69 (unknown)'>51:F8:AC:31:39:69 (unknown)
+                    </option>
+
+                    <option value='F7:3E:84:F6:67:4C Tile'>F7:3E:84:F6:67:4C Tile
+                    </option>
+
+                    <option value='F7:3E:84:F6:67:4C (unknown)'>F7:3E:84:F6:67:4C (unknown)
+                    </option>
+
+                </select>
+            </li>
+            ​
+            <li class="macAddrClass">
+                <select id="macAddr" name="macAddr" , class="macAddrInputs">
+
+                    <option value='b8:27:eb:30:2f:1b'>b8:27:eb:30:2f:1b
+                    </option>
+
+                </select>
+            </li>
+            ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​
+            <li><a href="/manual_ssid_entry" class="manualSSIDEntry">manual SSID entry -></a></li>
+
+            <li>
+                <input type="password" name="wifi_key" , class="wifiNetworkInputs">
+            </li>
+            ​
+            <input type="submit" , class="wifiConnectButton">
+        </ul>
+    </form>
+</div>
+​
+</body>
+
+</html>
