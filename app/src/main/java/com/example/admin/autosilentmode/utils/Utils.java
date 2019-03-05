@@ -61,9 +61,9 @@ public class Utils {
         currentMin = Integer.valueOf(strings[1]);
 
 
-        return   ((currentHr>timeBean.getStartHr() && currentHr<timeBean.getEndHr()))
-                || (currentHr==timeBean.getStartHr() && currentMin>=timeBean.getStartMin())
-                || (currentHr==timeBean.getEndHr() && currentMin<=timeBean.getEndMin());
+        return ((currentHr > timeBean.getStartHr() && currentHr < timeBean.getEndHr()))
+                || (currentHr == timeBean.getStartHr() && currentMin >= timeBean.getStartMin())
+                || (currentHr == timeBean.getEndHr() && currentMin <= timeBean.getEndMin() && timeBean.getStartHr() != timeBean.getEndHr());
 
     }
 }

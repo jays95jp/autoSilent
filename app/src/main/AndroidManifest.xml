@@ -14,13 +14,10 @@
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
 
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
 
     <application
@@ -32,9 +29,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <receiver android:name=".IncomingCallReceiver">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE" />
-            </intent-filter>-->
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.PHONE_STATE" />
+             </intent-filter>-->
         </receiver>
 
         <activity
@@ -51,20 +48,22 @@
             android:name=".activity.TimeSelectActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.SampleActivity">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>-->
         </activity>
 
         <service
-            android:exported="false"
-            android:name=".fireBaseJob.MyJobService">
+            android:name=".fireBaseJob.MyJobService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE" />
             </intent-filter>
         </service>
+
+        <receiver android:name=".fireBaseJob.MyReceiver"></receiver>
 
     </application>
 

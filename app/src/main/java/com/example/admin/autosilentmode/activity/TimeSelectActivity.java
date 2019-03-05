@@ -1,5 +1,7 @@
 package com.example.admin.autosilentmode.activity;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -13,11 +15,12 @@ import android.widget.Toast;
 import com.example.admin.autosilentmode.DBHelper;
 import com.example.admin.autosilentmode.R;
 import com.example.admin.autosilentmode.databinding.ActivityTimeSelectBinding;
+import com.example.admin.autosilentmode.fireBaseJob.MyReceiver;
 import com.example.admin.autosilentmode.model.TimeBean;
 import com.example.admin.autosilentmode.utils.Utils;
-import com.firebase.jobdispatcher.FirebaseJobDispatcher;
-import com.firebase.jobdispatcher.GooglePlayDriver;
 import com.google.gson.Gson;
+
+import java.util.Calendar;
 
 public class TimeSelectActivity extends AppCompatActivity {
 
@@ -106,6 +109,8 @@ public class TimeSelectActivity extends AppCompatActivity {
                     String json = gson.toJson(timeBean);
 
                     myDb.insertContact(json);
+                    setJob(startHr, startMin + 1);
+                    setJob(endHr, endMin + 1);
                     finish();
 
                 } else if (isValid() && isEdit) {
@@ -127,8 +132,19 @@ public class TimeSelectActivity extends AppCompatActivity {
 
     }
 
-    private void setJob() {
-        FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(this));
+    private void setJob(int hr, int min) {
+        AlarmManager alarmMgr;
+        alarmMgr = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, hr);
+        calendar.set(Calendar.MINUTE, min);
+        Intent myIntent = new Intent(this, MyReceiver.class);
+        PendingIntent pendingIntentam = PendingIntent.getBroadcast(this, 0, myIntent, 0);
+        AlarmManager alarmManageram = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManageram.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntentam);
+        alarmMgr.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, pendingIntentam);
 
     }
 

@@ -3,7 +3,6 @@ package com.example.admin.autosilentmode.activity;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 import com.example.admin.autosilentmode.DBHelper;
@@ -27,12 +26,10 @@ public class MainTimeScheduleListActivity extends AppCompatActivity {
         mydb = new DBHelper(this);
         // And From your main() method or any other method
 
-
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 //your method
-                Log.e("Call->","Runnable");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -54,7 +51,7 @@ public class MainTimeScheduleListActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.fab:
-                TimeSelectActivity.newInstance(this, false,null);
+                TimeSelectActivity.newInstance(this, false, null);
                 break;
         }
 

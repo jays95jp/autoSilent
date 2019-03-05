@@ -57,7 +57,7 @@ public class TimeScheduleListAdapter extends RecyclerView.Adapter<TimeScheduleLi
             listItemAlbumBinding.txtEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    TimeSelectActivity.newInstance(context, true,bean);
+                    TimeSelectActivity.newInstance(context, true, bean);
                 }
             });
 
