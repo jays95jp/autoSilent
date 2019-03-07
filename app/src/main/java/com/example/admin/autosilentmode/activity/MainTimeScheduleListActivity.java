@@ -1,6 +1,10 @@
 package com.example.admin.autosilentmode.activity;
 
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -25,7 +29,17 @@ public class MainTimeScheduleListActivity extends AppCompatActivity {
         activityTimeScheduleListBinding.setOnClick(this);
         mydb = new DBHelper(this);
         // And From your main() method or any other method
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                && !notificationManager.isNotificationPolicyAccessGranted()) {
 
+            Intent intent1 = new Intent(
+                    android.provider.Settings
+                            .ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+
+            startActivity(intent1);
+        }
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
